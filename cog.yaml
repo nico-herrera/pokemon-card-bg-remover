@@ -1,0 +1,27 @@
+build:
+  # Use GPU
+  gpu: true
+
+  # CUDA version compatible with PyTorch 2.0.1
+  cuda: "11.7"
+
+  # Python version
+  python_version: "3.10"
+
+  # System dependencies
+  system_packages:
+    - "libgl1-mesa-glx" # Required for OpenCV
+    - "libglib2.0-0" # Required for OpenCV
+
+  # Python dependencies
+  python_packages:
+    - "torch==2.0.1"
+    - "torchvision==0.15.2"
+    - "pillow==10.0.0"
+    - "numpy==1.24.3"
+    - "opencv-python==4.8.0.74"
+    - "scikit-image==0.21.0"
+    - "requests==2.31.0"
+
+# Prediction interface
+predict: "predict.py:Predictor"
